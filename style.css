@@ -1,0 +1,451 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-size: 18px;
+  font-family: 'Roboto', sans-serif;
+  color: #eee;
+  background-color: #eddfb3;
+}
+h1,
+h2,
+h3 {
+  font-weight: 400;
+}
+button {
+  cursor: pointer;
+}
+.container {
+  width: 90%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-areas: 'aside main';
+  height: 100vh;
+  padding: 10px 0;
+}
+aside {
+  position: relative;
+  grid-area: aside;
+  display: flex;
+  flex-direction: column;
+  background: #d8cca3;
+  box-shadow: 10px 10px 48px -39px rgba(255, 255, 255, 0.75);
+  -webkit-box-shadow: 10px 10px 48px -39px rgba(255, 255, 255, 0.75);
+  -moz-box-shadow: 10px 10px 48px -39px rgba(255, 255, 255, 0.75);
+  justify-content: center;
+  align-items: center;
+  color: #333;
+  margin-right: 10px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+#kotakSubmit {
+  text-align: center;
+}
+#kotakSubmit h1 {
+  text-align: center;
+  font-size: 1.1em;
+  margin-bottom: 10px;
+}
+#kotakSubmit input:focus,
+#kotakSubmit select:focus,
+#mySearch:focus,
+.fiturEdit input:focus,
+.fiturEdit select:focus {
+  outline: none;
+  border: none;
+}
+#kotakSubmit label {
+  font-size: 0.8em;
+}
+#judulBuku,
+#penulis,
+#tahunTerbit,
+#submit,
+#jenisBuku {
+  border: none;
+  margin-bottom: 8px;
+  height: 35px;
+  width: 80%;
+  text-align: center;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+.jenis {
+  background-color: #6d8b74;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  padding: 5px 10px;
+  color: #eee;
+  font-size: 0.8em;
+}
+#submit {
+  background-color: #6d8b74;
+  text-align: center;
+  cursor: pointer;
+  margin-top: 8px;
+  color: #eee;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+#submit:hover {
+  background-color: #81a589;
+}
+main {
+  display: grid;
+  grid-area: main;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    'edit edit'
+    'pencarian pencarian'
+    'kiri kanan';
+  color: #333;
+  gap: 10px;
+}
+.fiturEdit {
+  grid-area: edit;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  text-align: center;
+}
+.turun {
+  display: flex;
+}
+.fiturEdit h3 {
+  font-size: 0.8em;
+  margin-bottom: 8px;
+}
+.fiturEdit input,
+.fiturEdit select,
+.fiturEdit .batalEdit {
+  border: none;
+  height: 30px;
+  margin-bottom: 10px;
+  text-align: center;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+.fiturEdit #simpanEdit,
+.fiturEdit .batalEdit {
+  background-color: #6d8b74;
+  padding: 0 8px;
+  color: #eee;
+  cursor: pointer;
+}
+.fiturEdit .batalEdit {
+  background-color: #b25068;
+}
+.fiturEdit input:nth-child(2) {
+  width: 200px;
+}
+.fiturEdit input:nth-child(3) {
+  width: 100px;
+}
+.fiturEdit input:nth-child(4) {
+  width: 80px;
+}
+.containCari {
+  grid-area: pencarian;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  overflow: hidden;
+}
+#cariBuku {
+  border: none;
+  height: 40px;
+  width: 100%;
+  text-align: center;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+#cariBuku:focus {
+  outline: none;
+}
+.containSudah {
+  background-color: #d8cca3;
+  height: 100vh;
+  overflow-y: auto;
+  grid-area: kiri;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+.containBelum {
+  background-color: #d8cca3;
+  height: 100vh;
+  overflow-y: auto;
+  grid-area: kanan;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+.judulSudah,
+.judulBelum {
+  padding: 15px;
+  font-size: 0.9em;
+  background-color: #b09b71;
+  text-align: center;
+  transition: 0.5s ease-out;
+  -webkit-transition: 0.5s ease-out;
+  -moz-transition: 0.5s ease-out;
+  -ms-transition: 0.5s ease-out;
+  -o-transition: 0.5s ease-out;
+}
+.kotakBelumBaca .item,
+.kotakSudahBaca .item {
+  margin-bottom: 8px;
+  padding: 40px 10px 0 10px;
+  transition: 0.3s;
+  position: relative;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+.kotakBelumBaca,
+.kotakSudahBaca {
+  padding: 10px;
+}
+
+.kotakBelumBaca .dalam,
+.kotakSudahBaca .dalam {
+  margin-bottom: 20px;
+  font-size: 0.8em;
+}
+.kotakBelumBaca .dalam h3,
+.kotakSudahBaca .dalam h3 {
+  font-weight: 500;
+}
+.undoButton,
+.trashButton,
+.checkButton,
+.editButton,
+.jenis {
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+.undoButton,
+.trashButton,
+.checkButton,
+.editButton {
+  background-color: #87805e;
+  padding: 5px 10px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  color: #eee;
+  border: none;
+}
+.undoButton:hover,
+.trashButton:hover,
+.checkButton:hover,
+.editButton:hover {
+  background-color: #b09b71;
+}
+.batasBuku {
+  border: dashed 0.4px #b09b7173;
+  width: 100%;
+  margin: 10px auto;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+.batasGelap {
+  border: dashed 0.4px #1d1d1d;
+}
+.containGelapTerang {
+  position: absolute;
+  display: flex;
+  flex-direction: row-reverse;
+  top: 15px;
+  right: 15px;
+}
+.containGelapTerang span {
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  display: block;
+  width: 25px;
+  height: 25px;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+.containGelapTerang input {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  opacity: 0;
+  z-index: 99;
+  cursor: pointer;
+}
+.containGelapTerang input:checked ~ .bolaGerak {
+  transform: translateX(17px);
+  -webkit-transform: translateX(17px);
+  -moz-transform: translateX(17px);
+  -ms-transform: translateX(17px);
+  -o-transform: translateX(17px);
+}
+.containGelapTerang span {
+  background-color: #ffa500;
+}
+.containGelapTerang .bolaGerak {
+  background-color: #d8cca3;
+}
+.gelapTersier {
+  background-color: #4b4746;
+  color: #ddd;
+}
+.gelapSekunder {
+  background-color: #2b2b2b !important;
+  color: #ddd;
+}
+.gelapPrimer {
+  background-color: #1d1d1d;
+  color: #ddd;
+}
+.gelapColor {
+  color: #ddd;
+}
+.editSelecting {
+  background-color: #ffa600c5;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+.kopi {
+  font-size: 0.5em;
+  margin-top: 10px;
+}
+.cariMuncul {
+  opacity: 1;
+  visibility: visible;
+  transition: 1s;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+}
+.cariHilang {
+  opacity: 0;
+  visibility: hidden;
+  transition: 1s;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+}
+/* Responsive Scene */
+@media screen and (max-width: 1080px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+  .containBelum,
+  .containSudah {
+    height: auto;
+  }
+  aside {
+    padding: 90px 0;
+    margin-right: 0;
+  }
+}
+@media screen and (max-width: 700px) {
+  main {
+    display: flex;
+    flex-direction: column;
+  }
+  .containCari {
+    margin-top: 10px;
+  }
+  .fiturEdit {
+    margin-bottom: 0;
+  }
+  .fiturEdit input,
+  .fiturEdit select,
+  .fiturEdit .batalEdit {
+    margin-bottom: 10px;
+  }
+}
+@media screen and (max-width: 350px) {
+  .undoButton,
+  .trashButton,
+  .checkButton,
+  .editButton {
+    font-size: 0.7em;
+  }
+  .jenis {
+    position: relative;
+    margin-top: 8px;
+    text-align: center;
+  }
+}

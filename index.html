@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookshelf App - Brayen Luhat</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <aside>
+        <div class="containGelapTerang">
+          <input type="checkbox"/>
+          <span></span>
+          <span class="bolaGerak"></span>
+        </div>
+        <form action="#" id="kotakSubmit">
+          <h1>Masukan Judul Buku</h1>
+          <input type="text" id="judulBuku" placeholder="Judul Buku" required />
+          <input type="text" id="penulis" placeholder="Penulis" required />
+          <input type="number" id="tahunTerbit" maxlength="4" placeholder="Tahun Terbit" required /><br />
+          <select id="jenisBuku">
+            <option value="">-- Jenis Buku --</option>
+            <option value="Fiksi">Fiksi</option>
+            <option value="Non-Fiksi">Non-Fiksi</option>
+            <option value="Akademis">Akademis</option>
+            </select
+          ><br />
+          <input type="checkbox" id="sudahDibaca" />
+          <label for="checkbox">Check jika buku telah dibaca</label>
+          <input type="submit" value="Masukan" id="submit" />
+        </form>
+        <span class="kopi">Irenius Brayen Luhat, 2022</span>
+      </aside>
+      <main>
+        <div class="fiturEdit" id="fiturEdit">
+          <form action="#" id="formEdit">
+            <h3 class="edith3">Edit : </h3>
+            <input type="text" id="editJudul" placeholder="Judul">
+            <input type="text" id="editPenulis" placeholder="Penulis">
+            <input type="number" id="editTahun" placeholder="Tahun Terbit">
+            <select id="editJenis">
+              <option value="">-- Jenis Buku --</option>
+              <option value="Fiksi">Fiksi</option>
+              <option value="Non-Fiksi">Non-Fiksi</option>
+              <option value="Akademis">Akademis</option>
+              </select
+            >
+            <input type="submit" value="Simpan" id="simpanEdit">
+            <button class="batalEdit">Batal</button>
+          </form>
+        </div>
+        <div class="containCari" id="containCari">
+          <input type="text" id="cariBuku" placeholder="Cari.." title="Cari konten buku" />
+        </div>
+      <div class="containSudah">
+        <h3 class="judulSudah">Buku Yang Telah Dibaca</h3>
+        <div class="kotakSudahBaca"></div>
+      </div>
+      <div class="containBelum">
+        <h3 class="judulBelum">Buku Yang Belum Dibaca</h3>
+        <div class="kotakBelumBaca"></div>
+      </div>
+    </div>
+  </main>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.18/dist/sweetalert2.all.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
