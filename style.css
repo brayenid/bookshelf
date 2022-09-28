@@ -16,6 +16,10 @@ h3 {
 button {
   cursor: pointer;
 }
+a {
+  color: #111;
+  text-decoration: none;
+}
 .container {
   width: 90%;
   margin: auto;
@@ -383,7 +387,7 @@ main {
   -o-border-radius: 4px;
 }
 .kopi {
-  font-size: 0.5em;
+  font-size: 0.6em;
   margin-top: 10px;
 }
 .cariMuncul {
